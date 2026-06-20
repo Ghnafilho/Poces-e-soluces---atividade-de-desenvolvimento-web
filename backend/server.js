@@ -27,23 +27,6 @@ app.get("/pocoes", async (req, res) => {
 });
 
 /**
- * GET /pocoes/:id
- * Retorna uma poção específica pelo ID.
- * Retorna 404 se não encontrada.
- */
-app.get("/pocoes/:id", async (req, res) => {
-    try {
-        const pocao = await Pocao.findByPk(req.params.id);
-        if (!pocao) {
-            return res.status(404).json({ erro: "Poção não encontrada." });
-        }
-        res.json(pocao);
-    } catch (err) {
-        res.status(500).json({ erro: "Erro ao buscar poção.", detalhe: err.message });
-    }
-});
-
-/**
  * POST /pocoes
  * Cadastra uma nova poção.
  * Body esperado: { nome, descricao, imagem, preco }
