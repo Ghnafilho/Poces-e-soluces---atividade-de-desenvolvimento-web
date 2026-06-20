@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poções e Soluções</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-overlay">
+            <h1 class="loja-nome">⚗️ Poções &amp; Soluções</h1>
+            <p class="loja-slogan">O remédio para todos os seus problemas — soluções eficazes que você não vê em nenhum lugar</p>
+            <p class="loja-slogan">Única loja de soluções eficazes desde 1867</p>
+            <a href="#produtos" class="btn-hero">Ver Poções</a>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════
+         NAVEGAÇÃO
+    ════════════════════════════════════════ -->
+    <nav class="navbar">
+        <a href="#sobre">Sobre</a>
+        <a href="#historia">História</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#contato">Contato</a>
+        <a href="admin.html" class="nav-admin">🔒 Admin</a>
+    </nav>
+
+    <!-- ═══════════════════════════════════════
+         SOBRE A LOJA
+    ════════════════════════════════════════ -->
+    <section id="sobre" class="secao">
+        <div class="container">
+            <h2 class="secao-titulo">Sobre a Loja</h2>
+            <p>
+                Bem-vindo à <strong>Poções &amp; Soluções</strong>, a mais renomada botica mágica do
+                Beco da Última Saída. Aqui você encontra poções elaboradas com ingredientes raros,
+                coletados nos quatro cantos do mundo (e de alguns planos de existência paralelos).
+            </p>
+            <p>
+                Nossa proprietária, <strong>Annabelle Merigold</strong>, garante pessoalmente a
+                qualidade de cada frasco. Se a poção não funcionar, a culpa é sua por ter bebido errado.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         HISTÓRICO DA LOJA
+    ════════════════════════════════════════ -->
+    <section id="historia" class="secao secao-escura">
+        <div class="container">
+            <h2 class="secao-titulo">Nossa História</h2>
+            <p class="historia-intro">
+                Fundada em <strong>1867</strong> por Elara Merigold, avó-tataravó de Annabelle,
+                a loja sobreviveu a duas guerras mundiais, três pandemias e uma tentativa malsucedida
+                de exorcismo promovida pela prefeitura local em 1923.
+            </p>
+
+            <div class="galeria-historia">
+                <figure class="galeria-item">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHWWmcSmp1G5NAhWLfk2CAnIBYB1AbX_7qQw&s"
+                        alt="Laboratório antigo"
+                    />
+                    <figcaption>O laboratório original, c. 1870</figcaption>
+                </figure>
+                <figure class="galeria-item">
+                    <img
+                        src="Ingredientes_normais.png"
+                        alt="Prateleiras com frascos"
+                    />
+                    <figcaption>O acervo de ingredientes raros, c. 1940</figcaption>
+                </figure>
+                <figure class="galeria-item">
+                    <img
+                        src="https://us.123rf.com/450wm/anyka/anyka0909/anyka090900020/5495802-halloween-witch-stirring-in-green-poison-soup-in-her-cauldron.jpg"
+                        alt="caldeirão"
+                    />
+                    <figcaption>Annabelle em seu caldeirão, 2019</figcaption>
+                </figure>
+            </div>
+
+            <div class="linha-do-tempo">
+                <div class="evento">
+                    <span class="ano">1867</span>
+                    <p>Elara Merigold abre a botica no Beco da Última Saída.</p>
+                </div>
+                <div class="evento">
+                    <span class="ano">1923</span>
+                    <p>Tentativa de exorcismo pela prefeitura — fracasso retumbante.</p>
+                </div>
+                <div class="evento">
+                    <span class="ano">1985</span>
+                    <p>A loja recebe o prêmio "Melhor Poção Anti-Ressaca da Região".</p>
+                </div>
+                <div class="evento">
+                    <span class="ano">2024</span>
+                    <p>Annabelle lança o site após ser rejeitada pelo iFood.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         PRODUTOS
+    ════════════════════════════════════════ -->
+    <section id="produtos" class="secao">
+        <div class="container">
+            <h2 class="secao-titulo">Nossas Poções</h2>
+            <p class="produtos-subtitulo">Carregando poções do estoque mágico...</p>
+            <div id="lista-pocoes" class="grid-pocoes">
+                <!-- Preenchido via AJAX / fetch -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         RODAPÉ
+    ════════════════════════════════════════ -->
+    <footer id="contato" class="rodape">
+        <div class="container rodape-grid">
+            <div>
+                <h3>⚗️ Poções &amp; Soluções</h3>
+                <p>Beco da Última Saída, nº 13<br />Sala dos Fundos (bater três vezes)</p>
+                <p> * Portas mágicas não serão abertas para oficiais ou qualquer orgão de fiscalização*</p>
+            </div>
+            <div>
+                <h3>Contato</h3>
+                <p>📜 Gmail: annabelle@gmail.com - Unicamente para envio de cartas digitais</p>
+                <p>🔮 Ip para comunicação via telepatia: 66-8826.1530</p>
+                <p>⏰ Seg–Sex: 18h às 0h</p> 
+                <p>⏰Sábados e Domingos: 3h às 4h (hora local do plano material)</p>
+            </div>
+            <div>
+                <h3>Aviso Legal</h3>
+                <p>
+                    Efeitos colaterais incluem, mas não se limitam a: levitação involuntária,
+                    mudança de cor dos olhos e transmutação em animais.
+                    A loja não se responsabiliza por transformações permanentes, qualquer efeito 
+                    que não seja o dado pela própria poção é ocasionado inteiramente por aplicação
+                    indevida do produto.
+                </p>
+            </div>
+        </div>
+        <p class="rodape-copy">© 1867–2026 Poções &amp; Soluções. Todos os direitos mágicos reservados.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

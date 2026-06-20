@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin — Poções e Soluções</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-body">
+
+    <header class="admin-header">
+        <h1>🔒 Painel de Administração</h1>
+        <a href="index.html" class="btn-voltar">← Voltar ao site</a>
+    </header>
+
+    <main class="admin-main container">
+
+        <!-- ─── FORMULÁRIO DE CADASTRO ─── -->
+        <section class="admin-card">
+            <h2>Cadastrar Nova Poção</h2>
+            <form id="form-cadastro" novalidate>
+                <label>Nome *
+                    <input type="text" id="input-nome" placeholder="Ex: Poção Blue Sky" required />
+                </label>
+                <label>Descrição *
+                    <textarea id="input-descricao" rows="3" placeholder="Descreva os efeitos da poção..." required></textarea>
+                </label>
+                <label>URL da Imagem
+                    <input type="url" id="input-imagem" placeholder="https://..." />
+                </label>
+                <label>Preço (moedas) *
+                    <input type="number" id="input-preco" placeholder="Ex: 300" min="0" required />
+                </label>
+                <button type="submit" class="btn-cadastrar">+ Cadastrar Poção</button>
+                <p id="msg-cadastro" class="msg" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <!-- ─── LISTAGEM + REMOÇÃO ─── -->
+        <section class="admin-card">
+            <h2>Poções Cadastradas</h2>
+            <table id="tabela-pocoes">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-tabela">
+                    <!-- Preenchido via AJAX -->
+                </tbody>
+            </table>
+            <p id="msg-lista" class="msg" aria-live="polite"></p>
+        </section>
+
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>

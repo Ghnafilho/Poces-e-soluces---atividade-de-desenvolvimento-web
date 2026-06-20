@@ -1,0 +1,552 @@
+/* ═══════════════════════════════════════════════════
+   Poções e Soluções — Folha de Estilos Principal
+   Paleta escura + fontes clássicas (Gill Sans / similar)
+════════════════════════════════════════════════════ */
+
+/* ── Variáveis de tema ── */
+:root {
+    --cor-fundo:       #0f0e11;
+    --cor-superficie:  #1c1a22;
+    --cor-borda:       #2e2a38;
+    --cor-destaque:    rgb(109, 4, 109);;      
+    --cor-destaque2:   #95762d;      
+    --cor-texto:       #e2dff0;
+    --cor-texto-fraco: #9991b5;
+    --fonte-titulo:    'IM Fell English', Georgia, serif;
+    --fonte-corpo:     'Crimson Text', 'Gill Sans', Garamond, serif;
+    --raio:            6px;
+    --sombra:          0 4px 24px rgba(0,0,0,0.5);
+}
+
+/* ── Reset básico ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-corpo);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+a { color: var(--cor-destaque); text-decoration: none; }
+a:hover { color: var(--cor-destaque2); }
+
+img { max-width: 100%; border-radius: var(--raio); display: block; }
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ════════════════════════════════════════
+   HERO
+════════════════════════════════════════ */
+.hero {
+    min-height: 92vh;
+    background:
+        linear-gradient(to bottom, rgba(10,8,20,0.75) 0%, rgba(10,8,20,0.95) 100%),
+        url('https://img.freepik.com/premium-photo/magical-potion-shop-run-by-beings-diverse-magic_1022456-42521.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay { max-width: 700px; padding: 2rem; }
+
+.loja-nome {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    color: var(--cor-destaque2);
+    text-shadow: 0 0 30px rgba(212,168,67,0.4);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.loja-slogan {
+    font-size: 1.25rem;
+    color: var(--cor-texto-fraco);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.btn-hero {
+    display: inline-block;
+    padding: .75rem 2rem;
+    background: var(--cor-destaque);
+    color: #fff;
+    border-radius: var(--raio);
+    font-size: 1rem;
+    letter-spacing: .05em;
+    transition: background .2s, transform .2s;
+}
+.btn-hero:hover { background: var(--cor-destaque2); color: #111; transform: translateY(-2px); }
+
+/* ════════════════════════════════════════
+   NAVBAR
+════════════════════════════════════════ */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15,14,17,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--cor-borda);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: .75rem 1.5rem;
+    font-size: 1rem;
+    letter-spacing: .04em;
+}
+
+.navbar a { color: var(--cor-texto-fraco); transition: color .2s; }
+.navbar a:hover { color: var(--cor-destaque2); }
+.navbar .nav-admin {
+    margin-left: auto;
+    color: var(--cor-texto-fraco);
+    border: 1px solid var(--cor-borda);
+    padding: .2rem .8rem;
+    border-radius: var(--raio);
+}
+.navbar .nav-admin:hover { background: var(--cor-borda); }
+
+/* ════════════════════════════════════════
+   SEÇÕES GENÉRICAS
+════════════════════════════════════════ */
+.secao { padding: 5rem 0; }
+
+.secao-escura { background: var(--cor-superficie); }
+
+.secao-titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 2rem;
+    color: var(--cor-destaque2);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-style: italic;
+}
+
+.historia-intro { text-align: center; 
+    margin-bottom: 2.5rem; 
+    color: var(--cor-texto-fraco); }
+
+.galeria-historia {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.galeria-item {
+    flex: 1 1 280px;
+    max-width: 340px;
+    text-align: center;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 200px;
+    border: 1px solid var(--cor-borda);
+    filter: sepia(30%) brightness(0.85);
+    transition: filter .3s;
+}
+.galeria-item img:hover { filter: none; }
+
+.galeria-item figcaption {
+    margin-top: .5rem;
+    font-style: italic;
+    font-size: .9rem;
+    color: var(--cor-texto-fraco);
+}
+
+.linha-do-tempo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-left: 2px solid rgb(86, 2, 86);;
+    padding-left: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.evento { position: relative; }
+
+.evento .ano {
+    display: inline-block;
+    background:rgb(86, 2, 86);
+    color: #fff;
+    font-weight: 600;
+    padding: .1rem .6rem;
+    border-radius: var(--raio);
+    font-size: .9rem;
+    margin-bottom: .25rem;
+}
+
+
+.produtos-subtitulo {
+    text-align: center;
+    color: var(--cor-texto-fraco);
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.grid-pocoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 1.75rem;
+}
+
+/* Card de poção */
+.card-pocao {
+    background: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--sombra);
+    transition: transform .25s, box-shadow .25s;
+}
+.card-pocao:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(139,92,246,0.25);
+}
+
+.card-pocao img {
+    margin: 0 auto;
+    width: 50%;
+    height: 180px;
+    border-radius: 0;
+}
+
+.card-corpo {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: .5rem;
+}
+
+.card-nome {
+    font-family: var(--fonte-titulo);
+    font-size: 1.25rem;
+    color: var(--cor-destaque2);
+    font-style: italic;
+}
+
+.card-descricao {
+    font-size: .95rem;
+    color: var(--cor-texto-fraco);
+    flex: 1;
+}
+
+.card-preco {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--cor-destaque);
+}
+
+.btn-comprar {
+    margin-top: .75rem;
+    padding: .6rem 1rem;
+    background: var(--cor-destaque);
+    color: #fff;
+    border: none;
+    border-radius: var(--raio);
+    font-family: var(--fonte-corpo);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background .2s;
+    align-self: stretch;
+}
+.btn-comprar:hover { background: var(--cor-destaque2); color: #111; }
+
+/* Mensagem de erro de carregamento */
+.erro-pocoes {
+    text-align: center;
+    color: #f87171;
+    font-style: italic;
+    padding: 2rem;
+}
+
+/* ════════════════════════════════════════
+   RODAPÉ
+════════════════════════════════════════ */
+.rodape {
+    background: #0a0910;
+    border-top: 1px solid var(--cor-borda);
+    padding: 3rem 0 1.5rem;
+    font-size: .95rem;
+}
+
+.rodape-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.rodape h3 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-destaque2);
+    margin-bottom: .5rem;
+    font-style: italic;
+}
+
+.rodape p { color: var(--cor-texto-fraco); margin-bottom: .25rem; }
+
+.rodape-copy {
+    text-align: center;
+    color: #4a4560;
+    font-size: .8rem;
+    border-top: 1px solid var(--cor-borda);
+    padding-top: 1rem;
+}
+
+/* ════════════════════════════════════════
+   ADMIN
+════════════════════════════════════════ */
+.admin-body { background: var(--cor-fundo); }
+
+.admin-header {
+    background: var(--cor-superficie);
+    border-bottom: 1px solid var(--cor-borda);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-header h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    color: var(--cor-destaque2);
+    font-style: italic;
+}
+
+.btn-voltar {
+    color: var(--cor-texto-fraco);
+    font-size: .9rem;
+    border: 1px solid var(--cor-borda);
+    padding: .3rem .8rem;
+    border-radius: var(--raio);
+    transition: color .2s;
+}
+.btn-voltar:hover { color: var(--cor-destaque2); }
+
+.admin-main { padding: 2.5rem 1.5rem; display: flex; flex-direction: column; gap: 2.5rem; }
+
+.admin-card {
+    background: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    padding: 2rem;
+    box-shadow: var(--sombra);
+}
+
+.admin-card h2 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-destaque2);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+}
+
+/* Formulário de cadastro */
+#form-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 540px;
+}
+
+#form-cadastro label {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    font-size: .95rem;
+    color: var(--cor-texto-fraco);
+}
+
+#form-cadastro input,
+#form-cadastro textarea {
+    background: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto);
+    border-radius: var(--raio);
+    padding: .6rem .9rem;
+    font-family: var(--fonte-corpo);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color .2s;
+}
+
+#form-cadastro input:focus,
+#form-cadastro textarea:focus { border-color: var(--cor-destaque); }
+
+.btn-cadastrar {
+    margin-top: .5rem;
+    padding: .7rem 1.5rem;
+    background: var(--cor-destaque);
+    color: #fff;
+    border: none;
+    border-radius: var(--raio);
+    font-family: var(--fonte-corpo);
+    font-size: 1rem;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background .2s;
+}
+.btn-cadastrar:hover { background: var(--cor-destaque2); color: #111; }
+
+/* Tabela de poções */
+#tabela-pocoes {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .95rem;
+}
+
+#tabela-pocoes th, #tabela-pocoes td {
+    padding: .75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+#tabela-pocoes th {
+    color: var(--cor-texto-fraco);
+    font-weight: 600;
+    font-size: .85rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+#tabela-pocoes tr:hover td { background: rgba(139,92,246,.06); }
+
+.btn-remover {
+    padding: .3rem .8rem;
+    background: transparent;
+    color: #f87171;
+    border: 1px solid #f87171;
+    border-radius: var(--raio);
+    font-family: var(--fonte-corpo);
+    cursor: pointer;
+    font-size: .9rem;
+    transition: background .2s, color .2s;
+}
+.btn-remover:hover { background: #f87171; color: #fff; }
+
+/* Mensagens de feedback */
+.msg {
+    margin-top: .75rem;
+    font-style: italic;
+    font-size: .9rem;
+    min-height: 1.2em;
+}
+.msg.sucesso { color: #4ade80; }
+.msg.erro    { color: #f87171; }
+@media (max-width: 768px) {
+
+    /* Navbar: itens em duas linhas, centralizado */
+    .navbar {
+        flex-wrap: wrap;
+        gap: 0.75rem 1.2rem;
+        justify-content: center;
+        padding: 0.6rem 1rem;
+    }
+
+    /* Botão admin fica na mesma linha dos outros */
+    .navbar .nav-admin {
+        margin-left: 0;
+    }
+
+    /* Hero: padding menor, título menor */
+    .hero { min-height: 70vh; }
+
+    .loja-nome   { font-size: 2.2rem; }
+    .loja-slogan { font-size: 1rem; }
+
+    /* Galeria da história: uma coluna */
+    .galeria-historia {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .galeria-item { max-width: 100%; }
+
+    /* Grid de produtos: 2 colunas fixas */
+    .grid-pocoes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Rodapé: uma coluna */
+    .rodape-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Admin: formulário ocupa largura total */
+    #form-cadastro { max-width: 100%; }
+
+    /* Tabela admin: scroll horizontal */
+    #tabela-pocoes {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* ── Celular (até 480px) ── */
+@media (max-width: 480px) {
+
+    /* Hero bem menor */
+    .hero { min-height: 60vh; padding: 1rem; }
+
+    .hero-overlay { padding: 1rem; }
+
+    .loja-nome   { font-size: 1.7rem; }
+    .loja-slogan { font-size: 0.95rem; }
+
+    .btn-hero {
+        padding: 0.6rem 1.4rem;
+        font-size: 0.95rem;
+    }
+
+    /* Navbar: fonte menor */
+    .navbar { font-size: 0.9rem; gap: 0.5rem 1rem; }
+
+    /* Seções com menos padding vertical */
+    .secao { padding: 3rem 0; }
+
+    /* Títulos de seção menores */
+    .secao-titulo { font-size: 1.5rem; }
+
+    /* Grid de produtos: coluna única */
+    .grid-pocoes {
+        grid-template-columns: 1fr;
+    }
+
+    /* Cards de poção: imagem menor */
+    .card-pocao img { height: 160px; }
+
+    /* Linha do tempo: padding menor */
+    .linha-do-tempo { padding-left: 1rem; }
+
+    /* Admin header: empilhar título e botão */
+    .admin-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .admin-header h1 { font-size: 1.2rem; }
+
+    .admin-card { padding: 1.25rem; }
+
+    .admin-card h2 { font-size: 1.2rem; }
+}
