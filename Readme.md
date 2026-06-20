@@ -70,7 +70,6 @@ Com o servidor rodando, abra no navegador:
 | Método | Rota           | Descrição                         |
 |--------|----------------|-----------------------------------|
 | GET    | `/pocoes`      | Lista todas as poções             |
-| GET    | `/pocoes/:id`  | Retorna uma poção pelo ID         |
 | POST   | `/pocoes`      | Cadastra uma nova poção           |
 | DELETE | `/pocoes/:id`  | Remove uma poção pelo ID          |
 
