@@ -8,9 +8,7 @@ const PORT = 3001;
 app.use(cors());
 app.use(express.json());
 
-// ─────────────────────────────────────────────
 // ROTAS DA API (Web Service)
-// ─────────────────────────────────────────────
 
 /**
  * GET /pocoes
@@ -29,7 +27,7 @@ app.get("/pocoes", async (req, res) => {
 /**
  * POST /pocoes
  * Cadastra uma nova poção.
- * Body esperado: { nome, descricao, imagem, preco }
+ * Corpo esperado: { nome, descricao, imagem, preco }
  * Retorna 400 se campos obrigatórios estiverem ausentes.
  */
 app.post("/pocoes", async (req, res) => {
@@ -65,9 +63,7 @@ app.delete("/pocoes/:id", async (req, res) => {
     }
 });
 
-// ─────────────────────────────────────────────
-// INICIALIZAÇÃO
-// ─────────────────────────────────────────────
+// Inicialização
 initDB().then(() => {
     app.listen(PORT, () => {
         console.log(`🧪 Servidor rodando em http://localhost:${PORT}`);
