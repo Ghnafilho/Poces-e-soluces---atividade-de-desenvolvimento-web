@@ -21,10 +21,7 @@ const msgCadastro    = document.getElementById("msg-cadastro");
 const corpoTabela    = document.getElementById("corpo-tabela");
 const msgLista       = document.getElementById("msg-lista");
 
-// ─────────────────────────────────────────────
-// LISTAR POÇÕES
-// ─────────────────────────────────────────────
-
+// Listar poções
 /**
  * Busca todas as poções e preenche a tabela do painel admin.
  * Exibe mensagem de erro caso a requisição falhe.
@@ -73,10 +70,7 @@ function renderizarLinha(pocao) {
     `;
 }
 
-// ─────────────────────────────────────────────
-// CADASTRAR POÇÃO
-// ─────────────────────────────────────────────
-
+// Cadastrar poção
 /**
  * Lida com o envio do formulário de cadastro.
  * Valida os campos, envia POST para a API e recarrega a tabela.
@@ -118,11 +112,7 @@ formCadastro.addEventListener("submit", async (evento) => {
         mostrarMensagem(msgCadastro, "❌ Erro ao cadastrar: " + erro.message, false);
     }
 });
-
-// ─────────────────────────────────────────────
-// REMOVER POÇÃO
-// ─────────────────────────────────────────────
-
+//Remove poção pelo ID
 /**
  * Remove uma poção pelo ID após confirmação do usuário.
  * Recarrega a tabela após remoção bem-sucedida.
@@ -149,10 +139,7 @@ async function removerPocao(id) {
     }
 }
 
-// ─────────────────────────────────────────────
-// UTILITÁRIOS
-// ─────────────────────────────────────────────
-
+// Utilitários
 /**
  * Exibe uma mensagem de feedback ao usuário em um elemento <p>.
  * Remove a classe de estado anterior antes de aplicar a nova.
