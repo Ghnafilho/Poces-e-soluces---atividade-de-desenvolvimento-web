@@ -1,6 +1,6 @@
 import { Sequelize, DataTypes } from "sequelize";
 
-// Cria conexão com banco SQLite em memória, conforme exigido pela atividade
+// Cria conexão com banco SQLite em modo de armazenamento memória
 const sequelize = new Sequelize({
     dialect: "sqlite",
     storage: ":memory:",
